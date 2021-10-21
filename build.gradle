@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '2.5.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
 group 'org.example'
@@ -19,7 +21,9 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql:42.2.23'
     //implementation 'javax.persistence:com.springsource.javax.persistence'
     implementation 'org.hibernate:hibernate-gradle-plugin:5.4.28.Final'
-
+    implementation 'org.springframework.data:spring-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.5.5'
 }
 
 test {
