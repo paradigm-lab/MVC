@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.yaml.snakeyaml.events.Event;
 
 import javax.annotation.PostConstruct;
 
@@ -43,4 +44,35 @@ public class StudentController {
             return "redirect:/students";
     }
 
+    @GetMapping("/students/edit/{ID}")
+    public String editStudentForm(@PathVariable Long ID, Model model) {
+            model.addAttribute("student", studentService.getStudentById(ID));
+            return "edit_student";
+    }
+
+    @PostMapping("/students/{ID}")
+    public String updateStudent(@PathVariable  Long ID, @ModelAttribute("student") Student student , Model model) {
+        //Get the student from the database
+        Student existingStudent = studentService.getStudentById(ID);
+        existingStudent.setID(ID);
+        existingStudent.setFirstName(student.getFirstName());
+        existingStudent.setLastName(student.getLastName());
+        existingStudent.setEmail(student.getEmail());
+
+        //Save update student object
+        studentService.updateStudent(existingStudent);
+        return "redirect:/students";
+    }
+
+    //The handler method to handle the delete request
+    @GetMapping("/students/{ID}")
+    public String deleteStudent(@PathVariable Long ID ) {
+            studentService.deleteStudentById(ID);
+            return "redirect:/students";
+    }
 }
+
+
+
+
+

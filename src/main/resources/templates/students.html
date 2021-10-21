@@ -23,7 +23,8 @@
                             <th> Student First Name </th>
                             <th> Student Last Name </th>
                             <th> Student Email </th>
-                            <th> Actions </th>
+                            <th> Update </th>
+                            <th> Delete </th>
                         </tr>
                 </thead>
 
@@ -32,8 +33,13 @@
                             <td th:text="${student.firstName}"></td>
                             <td th:text="${student.lastName}"></td>
                             <td th:text="${student.email}"></td>
-                            <td><a th:href="@{/students/edit/{ID}(ID=${student.ID})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
-                            <td><a th:href="@{/students/delete/{ID}(ID=${student.ID})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+                            <td>
+                                <a th:href="@{/students/edit/{ID}(ID=${student.ID})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i>Update</a>
+                            </td>
+
+                            <td>
+                                <a th:href="@{/students/delete/{ID}(ID=${student.ID})}" class="btn btn-danger"><i class="fas fa-user-times ml-2"></i>Delete</a>
+                            </td>
                             <!-- <td>
                                 <a th:href = "@{/students/edit/{id}(id=${student.id})}" class="btn btn-primary"></a>
                             </td> -->
