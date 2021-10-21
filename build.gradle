@@ -4,7 +4,10 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
-group 'org.example'
+apply plugin: 'application'
+mainClassName = "com.student.StudentManagementSystemApplication"
+
+group 'StudentManagementSystemApplication'
 version '1.0-SNAPSHOT'
 
 repositories {
