@@ -23,8 +23,8 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql:42.2.23'
 
     //implementation 'javax.persistence:com.springsource.javax.persistence'
-    implementation group: 'org.thymeleaf', name: 'thymeleaf', version: '2.0.5'
-    implementation 'org.hibernate:hibernate-gradle-plugin:5.4.28.Final'
+    //implementation group: 'org.thymeleaf', name: 'thymeleaf', version: '2.0.5'
+    //implementation 'org.hibernate:hibernate-gradle-plugin:5.4.28.Final'
     implementation 'org.springframework.data:spring-data-jpa'
     implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.5.5'
 
